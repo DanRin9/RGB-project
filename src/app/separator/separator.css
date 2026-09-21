@@ -1,0 +1,10 @@
+.letter {
+  font-size: 32px;
+  width: 40px;
+}
+
+.box {
+  width: 80px;
+  padding: 5px;
+  text-align: center;
+}
