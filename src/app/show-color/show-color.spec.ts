@@ -14,7 +14,6 @@ describe('ShowColor', () => {
 
     fixture = TestBed.createComponent(ShowColor);
     component = fixture.componentInstance;
-    fixture.componentRef.setInput('hex', 'FF8800');
     await fixture.whenStable();
   });
 

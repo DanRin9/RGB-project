@@ -1,14 +1,12 @@
-@if (hex()) {
-  <div class="d-flex">
-    <div class="me-3">
-      <p>Normal</p>
-      <div class="square" [style.background-color]="normalColor()"></div>
-      <p>{{ normalColor() }}</p>
-    </div>
-    <div>
-      <p>B/N</p>
-      <div class="square" [style.background-color]="grayColor()"></div>
-      <p>{{ grayColor() }}</p>
-    </div>
+<div class="d-flex">
+  <div class="me-3">
+    <p>Normal</p>
+    <div class="square" [style.background-color]="service.normalColor()"></div>
+    <p>{{ service.normalColor() }}</p>
   </div>
-}
+  <div>
+    <p>B/N</p>
+    <div class="square" [style.background-color]="service.grayColor()"></div>
+    <p>{{ service.grayColor() }}</p>
+  </div>
+</div>

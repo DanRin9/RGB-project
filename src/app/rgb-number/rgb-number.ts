@@ -1,4 +1,4 @@
-import { Component, inject, output, signal } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { ColorService } from '../model/color.service';
 
 @Component({
@@ -12,13 +12,17 @@ export class RgbNumber {
 
   draft = signal('');
 
-  show = output<string>();
+  constructor() {
+    effect(() => {
+      this.draft.set('#' + this.service.hex());
+    });
+  }
 
   onInput(event: Event) {
     this.draft.set((event.target as HTMLInputElement).value);
   }
 
   onShow() {
-    this.show.emit(this.service.normalize(this.draft()));
+    this.service.setHex(this.draft());
   }
 }

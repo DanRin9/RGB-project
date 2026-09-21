@@ -15,7 +15,6 @@ describe('Separator', () => {
     fixture = TestBed.createComponent(Separator);
     component = fixture.componentInstance;
     fixture.componentRef.setInput('channel', { letter: 'R', name: 'Red', start: 0 });
-    fixture.componentRef.setInput('hex', 'FF8800');
     await fixture.whenStable();
   });
 

@@ -12,7 +12,10 @@ export class Separator {
   private service = inject(ColorService);
 
   channel = input.required<Channel>();
-  hex = input.required<string>();
 
-  value = computed(() => this.service.channelHex(this.hex(), this.channel().start));
+  value = computed(() => this.service.channelHex(this.channel().start));
+
+  onChange(event: Event) {
+    this.service.setChannel(this.channel().start, (event.target as HTMLInputElement).value);
+  }
 }

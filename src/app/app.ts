@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RgbNumber } from './rgb-number/rgb-number';
 import { Separator } from './separator/separator';
 import { ShowColor } from './show-color/show-color';
@@ -12,10 +12,4 @@ import { ColorService } from './model/color.service';
 })
 export class App {
   service = inject(ColorService);
-
-  hex = signal('');
-
-  onShow(value: string) {
-    this.hex.set(value);
-  }
 }
